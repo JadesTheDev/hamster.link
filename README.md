@@ -1,0 +1,2 @@
+# hamster.link
+School project
