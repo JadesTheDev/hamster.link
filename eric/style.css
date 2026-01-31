@@ -1,122 +1,139 @@
-/* =========================
-   ERIC – WARRIOR ROUTER
-   ========================= */
+/* ===== Base / layout ===== */
+* { box-sizing: border-box; }
 
-/* Reset-ish */
-* {
-  box-sizing: border-box;
+:root{
+  --ink: #141218;
+  --muted: #5e5869;
+  --card: rgba(255,255,255,0.78);
+  --stroke: rgba(20,18,24,0.10);
+  --shadow: 0 18px 40px rgba(0,0,0,0.10);
+  --radius: 26px;
+}
+
+html, body { height: 100%; }
+
+body{
   margin: 0;
-  padding: 0;
+  color: var(--ink);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+
+  /* subtle steel-ish page wash so Eric's tile pops */
+  background: linear-gradient(to bottom, #f2f4f8, #f7eef1);
 }
 
-/* Page background */
-body {
-  min-height: 100vh;
-  font-family: "Segoe UI", Arial, sans-serif;
-  background: linear-gradient(
-    180deg,
-    #2b2f33 0%,
-    #1f2327 50%,
-    #15181b 100%
-  );
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Main router card */
-.router-card {
-  width: 90%;
-  max-width: 900px;
-  background: linear-gradient(
-    180deg,
-    #3a3f45 0%,
-    #2b2f33 100%
-  );
-  border-radius: 28px;
-  padding: 32px;
-  box-shadow:
-    0 12px 28px rgba(0, 0, 0, 0.65),
-    inset 0 0 0 2px rgba(255, 255, 255, 0.05);
-  border-left: 6px solid #b32626; /* warrior accent */
-}
-
-/* Header text */
-.router-card h1 {
+/* ===== Header ===== */
+.top{
   text-align: center;
-  font-size: 2rem;
-  margin-bottom: 8px;
-  color: #f2f2f2;
+  padding: 34px 16px 18px;
 }
 
-.router-card h2 {
-  text-align: center;
-  font-size: 1rem;
-  font-weight: normal;
-  margin-bottom: 24px;
-  color: #c7c7c7;
+.top h1{
+  margin: 0;
+  font-size: clamp(34px, 4.3vw, 56px);
+  letter-spacing: 0.5px;
 }
 
-/* Chat window */
-.chat-window {
-  background: linear-gradient(
-    180deg,
-    #1c1f23 0%,
-    #14171a 100%
-  );
-  border-radius: 18px;
-  padding: 16px;
-  height: 280px;
-  overflow-y: auto;
-  margin-bottom: 16px;
-  box-shadow: inset 0 2px 8px rgba(0,0,0,0.8);
-  color: #e6e6e6;
+.sub{
+  margin: 8px 0 18px;
+  color: var(--muted);
+  font-weight: 500;
 }
 
-/* Input row */
-.input-row {
+/* ===== Nav pills ===== */
+.nav{
   display: flex;
   gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-/* Inputs */
-input[type="text"] {
-  flex: 1;
-  padding: 10px 14px;
-  border-radius: 18px;
-  border: 1px solid #555;
-  outline: none;
-  font-size: 0.95rem;
-  background-color: #1c1f23;
-  color: #f2f2f2;
+.pill{
+  text-decoration: none;
+  color: var(--ink);
+  background: rgba(255,255,255,0.85);
+  border: 1px solid var(--stroke);
+  padding: 10px 16px;
+  border-radius: 999px;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.06);
+  transition: transform 120ms ease, box-shadow 120ms ease;
 }
 
-input[type="text"]::placeholder {
-  color: #9a9a9a;
-}
-
-/* Buttons */
-button {
-  padding: 10px 18px;
-  border-radius: 18px;
-  border: none;
-  cursor: pointer;
-  font-size: 0.95rem;
-  background: linear-gradient(
-    180deg,
-    #c43a3a 0%,
-    #8f1f1f 100%
-  );
-  color: #ffffff;
-  box-shadow:
-    0 4px 10px rgba(0,0,0,0.6),
-    inset 0 1px 0 rgba(255,255,255,0.15);
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
-
-button:hover {
+.pill:hover{
   transform: translateY(-1px);
-  box-shadow:
-    0 6px 14px rgba(0,0,0,0.8),
-    inset 0 1px 0 rgba(255,255,255,0.2);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.10);
+}
+
+.pill.active{
+  border-color: rgba(20,18,24,0.18);
+}
+
+/* ===== Main card ===== */
+.wrap{
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 18px 16px 40px;
+}
+
+.card{
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 22px;
+  align-items: center;
+
+  background: var(--card);
+  border: 1px solid var(--stroke);
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+  padding: 22px;
+}
+
+@media (max-width: 820px){
+  .card{ grid-template-columns: 1fr; }
+}
+
+/* ===== The square tile ===== */
+.tile{
+  width: 100%;
+  max-width: 360px;
+  aspect-ratio: 1 / 1;      /* square */
+  border-radius: var(--radius);
+  border: 1px solid rgba(20,18,24,0.12);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.12);
+
+  /* IMPORTANT: path is relative to THIS css file */
+  background-image: url("eric.png");
+  background-size: contain;     /* transparent png = contain looks best */
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* ===== Text block ===== */
+.info h2{
+  margin: 0 0 6px;
+  font-size: 30px;
+}
+
+.tagline{
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.note{
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+code{
+  background: rgba(0,0,0,0.06);
+  padding: 2px 6px;
+  border-radius: 8px;
+}
+
+/* ===== Footer ===== */
+.foot{
+  text-align: center;
+  color: var(--muted);
+  padding: 18px 12px 28px;
 }
