@@ -1,161 +1,76 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hamster Link</title>
-
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="../style.css" />
 </head>
 
 <body>
-  <header class="topbar">
+  <header class="site-header">
+    <div class="top-bar"></div>
+
     <h1 class="title">Hamster Link</h1>
     <p class="subtitle">ECPI University • Project Hamster Link</p>
+
+    <nav class="nav-pills" aria-label="Primary">
+      <a class="pill active" href="../home/index.html">Home</a>
+      <a class="pill" href="../kenzie/index.html">Kenzie</a>
+      <a class="pill" href="../eric/index.html">Eric</a>
+      <a class="pill" href="../icarus/index.html">Icarus</a>
+      <a class="pill" href="../thaddius/index.html">Thaddius</a>
+    </nav>
   </header>
 
-  <!-- Tabs -->
-  <nav class="tabs" aria-label="Site sections">
-    <button class="tablink" data-tab="home" id="defaultOpen">Home</button>
-    <button class="tablink" data-tab="chat">Router Chat</button>
-    <button class="tablink" data-tab="about">About Us</button>
-    <button class="tablink" data-tab="contact">Contact</button>
-  </nav>
-
   <main class="container">
-    <!-- HOME -->
-    <section id="home" class="tabcontent">
-      <div class="card">
-        <h2>Welcome to our server.</h2>
+    <section class="card">
+      <h2>Welcome to our server.</h2>
+      <p class="muted">
+        This is the starting homepage. We’ll keep it simple and stable while we build the router UI.
+      </p>
 
-        <!-- Optional image (put hamsterlink.jpg in the same folder) -->
-        <img
-          class="hero-img"
-          src="hamsterlink.jpg"
-          alt="Hamster Link"
-          onerror="this.style.display='none';"
+      <div class="search-row">
+        <label class="search-label" for="searchBox">Search</label>
+
+        <input
+          id="searchBox"
+          type="text"
+          placeholder="Search..."
+          autocomplete="off"
         />
 
-        <p>
-          This is the starting homepage. We’ll keep it simple and stable while we build the router UI.
-        </p>
-
-        <div class="row">
-          <label class="label" for="searchBox">Search</label>
-          <input id="searchBox" class="input" type="text" placeholder="Search…" />
-          <button id="searchBtn" class="btn">Search</button>
-        </div>
-
-        <p class="muted">
-          Reference guide link can live here later (or be moved to Resources in Discord).
-        </p>
+        <button id="searchBtn" type="button">Search</button>
       </div>
+
+      <p class="muted small">
+        Reference guide link can live here later (or be moved to Resources in Discord).
+      </p>
     </section>
 
-    <!-- CHAT -->
-    <section id="chat" class="tabcontent">
-      <div class="card">
-        <h2 class="center">
-          Hello! My name is <span id="userNameDisplay" class="highlight">Guest</span>
-        </h2>
+    <section class="grid">
+      <a class="router-tile kenzie" href="../kenzie/index.html">
+        <div class="tile-title">Kenzie</div>
+        <div class="tile-sub">Princess • pink gradients</div>
+      </a>
 
-        <p class="center muted">
-          You are currently talking to: <span id="routerNameDisplay" class="highlight">Router-1</span>
-        </p>
+      <a class="router-tile eric" href="../eric/index.html">
+        <div class="tile-title">Eric</div>
+        <div class="tile-sub">Warrior • steel → red</div>
+      </a>
 
-        <!-- Set name -->
-        <div class="row">
-          <label class="label" for="nameInput">Enter your name:</label>
-          <input id="nameInput" class="input" type="text" placeholder="e.g., Stormi" />
-          <button id="setNameBtn" class="btn">Send</button>
-        </div>
+      <a class="router-tile icarus" href="../icarus/index.html">
+        <div class="tile-title">Icarus</div>
+        <div class="tile-sub">Nerd • cool blue → purple</div>
+      </a>
 
-        <!-- Chat log -->
-        <div id="chatLog" class="chatlog" aria-live="polite"></div>
-
-        <!-- Send message -->
-        <div class="row">
-          <input id="messageInput" class="input" type="text" placeholder="Type a message to communicate…" />
-          <button id="sendMsgBtn" class="btn">Send</button>
-        </div>
-
-        <div class="row row-tight">
-          <label class="label" for="routerSelect">Router skin:</label>
-          <select id="routerSelect" class="input select">
-            <option value="Router-1">Router-1</option>
-            <option value="Router-2">Router-2</option>
-            <option value="Router-3">Router-3</option>
-            <option value="Router-4">Router-4</option>
-          </select>
-
-          <button id="clearChatBtn" class="btn btn-ghost">Clear</button>
-        </div>
-
-        <p class="muted small">
-          Right now the router reply is simulated. Later we’ll swap one function to call the REST API.
-        </p>
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about" class="tabcontent">
-      <div class="card">
-        <h2>Students and Roles</h2>
-
-        <div class="grid">
-          <div class="pill">
-            <h3>Frontend</h3>
-            <ul>
-              <li>Jade Powell</li>
-              <li>Michael Consigliere</li>
-            </ul>
-          </div>
-
-          <div class="pill">
-            <h3>Backend</h3>
-            <ul>
-              <li>Kenneth Irving</li>
-            </ul>
-          </div>
-
-          <div class="pill">
-            <h3>Networking</h3>
-            <ul>
-              <li>Allen Jones</li>
-            </ul>
-          </div>
-
-          <div class="pill">
-            <h3>Security</h3>
-            <ul>
-              <li>Desiree Delay</li>
-            </ul>
-          </div>
-
-          <div class="pill">
-            <h3>Optimization / Routing / Docs</h3>
-            <ul>
-              <li>Ja' Shawn</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="tabcontent">
-      <div class="card">
-        <h2>Contact</h2>
-        <p>For now we’ll keep this minimal.</p>
-
-        <p>
-          Backend contact:
-          <a class="link" href="mailto:contact.kenneth.irving@gmail.com">contact.kenneth.irving@gmail.com</a>
-        </p>
-      </div>
+      <a class="router-tile thaddius" href="../thaddius/index.html">
+        <div class="tile-title">Thaddius</div>
+        <div class="tile-sub">Brick • charcoal → brick</div>
+      </a>
     </section>
   </main>
 
-  <script src="app.js"></script>
+  <script src="../app.js"></script>
 </body>
 </html>
