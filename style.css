@@ -1,0 +1,10 @@
+body {
+  background-color: pink;
+  font-family: Arial, sans-serif;
+}
+
+.tablink {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+}
