@@ -1,0 +1,125 @@
+/* =========================
+   THADDIUS – THE BRICK ROUTER
+   ========================= */
+
+/* Reset-ish */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Page background */
+body {
+  min-height: 100vh;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(
+    180deg,
+    #141414 0%,
+    #1b1b1b 45%,
+    #2a0f0f 100%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Main router card */
+.router-card {
+  width: 90%;
+  max-width: 900px;
+  background: linear-gradient(
+    180deg,
+    #1f1f1f 0%,
+    #1a1a1a 55%,
+    #2b1212 100%
+  );
+  border-radius: 28px;
+  padding: 32px;
+  box-shadow:
+    0 14px 34px rgba(0, 0, 0, 0.75),
+    inset 0 0 0 2px rgba(255, 255, 255, 0.05);
+  border-left: 6px solid #b02a2a; /* brick accent */
+}
+
+/* Header text */
+.router-card h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 8px;
+  color: #f4f4f4;
+}
+
+.router-card h2 {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: normal;
+  margin-bottom: 24px;
+  color: rgba(244, 244, 244, 0.72);
+}
+
+/* Chat window */
+.chat-window {
+  background: linear-gradient(
+    180deg,
+    rgba(18, 18, 18, 0.96) 0%,
+    rgba(10, 10, 10, 0.96) 100%
+  );
+  border-radius: 18px;
+  padding: 16px;
+  height: 280px;
+  overflow-y: auto;
+  margin-bottom: 16px;
+  box-shadow: inset 0 2px 12px rgba(0,0,0,0.9);
+  color: #f0f0f0;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Input row */
+.input-row {
+  display: flex;
+  gap: 12px;
+}
+
+/* Inputs */
+input[type="text"] {
+  flex: 1;
+  padding: 10px 14px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  outline: none;
+  font-size: 0.95rem;
+  background-color: rgba(14, 14, 14, 0.95);
+  color: #f4f4f4;
+}
+
+input[type="text"]::placeholder {
+  color: rgba(244, 244, 244, 0.5);
+}
+
+/* Buttons */
+button {
+  padding: 10px 18px;
+  border-radius: 18px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+  background: linear-gradient(
+    180deg,
+    #6b1b1b 0%,
+    #b02a2a 55%,
+    #7a1f1f 100%
+  );
+  color: #ffffff;
+  box-shadow:
+    0 4px 12px rgba(0,0,0,0.75),
+    inset 0 1px 0 rgba(255,255,255,0.14);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 7px 18px rgba(0,0,0,0.9),
+    inset 0 1px 0 rgba(255,255,255,0.18);
+}
