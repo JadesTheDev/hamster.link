@@ -4,73 +4,66 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hamster Link</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
   <header class="site-header">
-    <div class="top-bar"></div>
+    <h1 class="site-title">Hamster Link</h1>
+    <p class="site-subtitle">ECPI University • Project Hamster Link</p>
 
-    <h1 class="title">Hamster Link</h1>
-    <p class="subtitle">ECPI University • Project Hamster Link</p>
-
-    <nav class="nav-pills" aria-label="Primary">
-      <a class="pill active" href="../home/index.html">Home</a>
-      <a class="pill" href="../kenzie/index.html">Kenzie</a>
-      <a class="pill" href="../eric/index.html">Eric</a>
-      <a class="pill" href="../icarus/index.html">Icarus</a>
-      <a class="pill" href="../thaddius/index.html">Thaddius</a>
+    <nav class="site-nav" aria-label="Primary">
+      <a class="nav-pill active" href="./">Home</a>
+      <a class="nav-pill" href="kenzie/">Kenzie</a>
+      <a class="nav-pill" href="eric/">Eric</a>
+      <a class="nav-pill" href="icarus/">Icarus</a>
+      <a class="nav-pill" href="thaddius/">Thaddius</a>
     </nav>
   </header>
 
   <main class="container">
     <section class="card">
       <h2>Welcome to our server.</h2>
-      <p class="muted">
-        This is the starting homepage. We’ll keep it simple and stable while we build the router UI.
-      </p>
+      <p>This is the starting homepage. We’ll keep it simple and stable while we build the router UI.</p>
 
       <div class="search-row">
         <label class="search-label" for="searchBox">Search</label>
-
-        <input
-          id="searchBox"
-          type="text"
-          placeholder="Search..."
-          autocomplete="off"
-        />
-
-        <button id="searchBtn" type="button">Search</button>
+        <input id="searchBox" class="search-input" type="text" placeholder="Search..." />
+        <button class="btn" type="button">Search</button>
       </div>
 
-      <p class="muted small">
-        Reference guide link can live here later (or be moved to Resources in Discord).
-      </p>
-    </section>
+      <p class="muted">Reference guide link can live here later (or be moved to Resources in Discord).</p>
 
-    <section class="grid">
-      <a class="router-tile kenzie" href="../kenzie/index.html">
-        <div class="tile-title">Kenzie</div>
-        <div class="tile-sub">Princess • pink gradients</div>
-      </a>
+      <hr class="divider" />
 
-      <a class="router-tile eric" href="../eric/index.html">
-        <div class="tile-title">Eric</div>
-        <div class="tile-sub">Warrior • steel → red</div>
-      </a>
+      <div class="router-grid">
+        <a class="router-tile kenzie" href="kenzie/">
+          <div class="router-name">Kenzie</div>
+          <div class="router-role">Princess • pink gradients</div>
+        </a>
 
-      <a class="router-tile icarus" href="../icarus/index.html">
-        <div class="tile-title">Icarus</div>
-        <div class="tile-sub">Nerd • cool blue → purple</div>
-      </a>
+        <a class="router-tile eric" href="eric/">
+          <div class="router-name">Eric</div>
+          <div class="router-role">Warrior • steel → red</div>
+        </a>
 
-      <a class="router-tile thaddius" href="../thaddius/index.html">
-        <div class="tile-title">Thaddius</div>
-        <div class="tile-sub">Brick • charcoal → brick</div>
-      </a>
+        <a class="router-tile icarus" href="icarus/">
+          <div class="router-name">Icarus</div>
+          <div class="router-role">Nerd • cool blue → purple</div>
+        </a>
+
+        <a class="router-tile thaddius" href="thaddius/">
+          <div class="router-name">Thaddius</div>
+          <div class="router-role">Brick • charcoal → brick</div>
+        </a>
+      </div>
     </section>
   </main>
 
-  <script src="../app.js"></script>
+  <footer class="site-footer">
+    <span>hamster.link</span>
+    <span class="dot">•</span>
+    <span>School project</span>
+  </footer>
 </body>
 </html>
