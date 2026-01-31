@@ -4,7 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hamster Link</title>
-  <link rel="stylesheet" href="style.css" />
+
+  <!-- IMPORTANT: keep this EXACT and in repo root -->
+  <link rel="stylesheet" href="./style.css" />
 </head>
 
 <body>
@@ -22,62 +24,44 @@
   </header>
 
   <main class="wrap">
-    <section class="card">
+    <section class="card hero">
       <h2>Welcome to our server.</h2>
-      <p class="desc">
-        This is the starting homepage. We’ll keep it simple and stable while we build the router UI.
-      </p>
+      <p>This is the starting homepage. We’ll keep it simple and stable while we build the router UI.</p>
 
       <div class="searchRow">
-        <label for="search" class="searchLabel">Search</label>
-        <input id="search" class="searchInput" type="text" placeholder="Search..." />
+        <label class="searchLabel" for="q">Search</label>
+        <input id="q" class="searchInput" type="text" placeholder="Search..." />
         <button class="searchBtn" type="button">Search</button>
       </div>
 
-      <p class="muted">
-        Reference guide link can live here later (or be moved to Resources in Discord).
-      </p>
+      <p class="muted">Reference guide link can live here later (or be moved to Resources in Discord).</p>
 
       <hr class="divider" />
 
       <div class="grid">
-        <a class="router" href="./kenzie/index.html">
-          <div class="tile kenzie" aria-label="Kenzie tile"></div>
-          <div class="rText">
-            <h3>Kenzie</h3>
-            <p>Princess • pink gradients</p>
-          </div>
+        <a class="router kenzie" href="./kenzie/index.html">
+          <div class="routerTitle">Kenzie</div>
+          <div class="routerSub">Princess • pink gradients</div>
         </a>
 
-        <a class="router" href="./eric/index.html">
-          <div class="tile eric" aria-label="Eric tile"></div>
-          <div class="rText">
-            <h3>Eric</h3>
-            <p>Warrior • steel → red</p>
-          </div>
+        <a class="router eric" href="./eric/index.html">
+          <div class="routerTitle">Eric</div>
+          <div class="routerSub">Warrior • steel → red</div>
         </a>
 
-        <a class="router" href="./icarus/index.html">
-          <div class="tile icarus" aria-label="Icarus tile"></div>
-          <div class="rText">
-            <h3>Icarus</h3>
-            <p>Nerd • cool blue → purple</p>
-          </div>
+        <a class="router icarus" href="./icarus/index.html">
+          <div class="routerTitle">Icarus</div>
+          <div class="routerSub">Nerd • cool blue → purple</div>
         </a>
 
-        <a class="router" href="./thaddius/index.html">
-          <div class="tile thaddius" aria-label="Thaddius tile"></div>
-          <div class="rText">
-            <h3>Thaddius</h3>
-            <p>Brick • charcoal → brick</p>
-          </div>
+        <a class="router thaddius" href="./thaddius/index.html">
+          <div class="routerTitle">Thaddius</div>
+          <div class="routerSub">Brick • charcoal → brick</div>
         </a>
       </div>
     </section>
-  </main>
 
-  <footer class="foot">
-    hamster.link • School project
-  </footer>
+    <footer class="footer">hamster.link • School project</footer>
+  </main>
 </body>
 </html>
