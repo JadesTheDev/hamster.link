@@ -1,10 +1,179 @@
+/* Background + base */
+:root {
+  --card: rgba(255, 255, 255, 0.78);
+  --border: rgba(0, 0, 0, 0.12);
+  --shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+  --text: #1e1e1e;
+  --muted: rgba(0, 0, 0, 0.55);
+}
+
+* { box-sizing: border-box; }
+
 body {
-  background-color: pink;
+  margin: 0;
   font-family: Arial, sans-serif;
+  color: var(--text);
+
+  /* Keep your teammate's bubble concept */
+  background-image: url("bubbles.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* Top header */
+.topbar {
+  text-align: center;
+  padding: 18px 12px 8px;
+}
+
+.title {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.subtitle {
+  margin: 6px 0 0;
+  color: var(--muted);
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px;
+  flex-wrap: wrap;
 }
 
 .tablink {
-  padding: 10px 20px;
-  border-radius: 8px;
-  border: none;
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.55);
+  cursor: pointer;
+  transition: transform 0.08s ease, background 0.15s ease;
 }
+
+.tablink:hover { transform: translateY(-1px); }
+.tablink.active {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: var(--shadow);
+}
+
+/* Layout */
+.container {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 10px 12px 40px;
+}
+
+.tabcontent {
+  display: none;
+}
+
+.card {
+  margin: 10px auto;
+  padding: 18px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
+
+.center { text-align: center; }
+.muted { color: var(--muted); }
+.small { font-size: 0.9rem; }
+
+.hero-img {
+  display: block;
+  max-width: 520px;
+  width: 100%;
+  margin: 14px auto;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+}
+
+/* Inputs / buttons */
+.row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  margin: 12px 0;
+  flex-wrap: wrap;
+}
+
+.row-tight { margin-top: 6px; }
+
+.label {
+  font-weight: bold;
+}
+
+.input {
+  min-width: 240px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.9);
+  outline: none;
+}
+
+.select { min-width: 160px; }
+
+.btn {
+  padding: 10px 14px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+}
+
+.btn-ghost {
+  background: rgba(255, 255, 255, 0.55);
+}
+
+/* Chat */
+.chatlog {
+  height: 260px;
+  overflow: auto;
+  padding: 12px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.msg {
+  padding: 10px 12px;
+  margin: 8px 0;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  max-width: 90%;
+}
+
+.msg.me { margin-left: auto; background: rgba(255, 235, 245, 0.95); }
+.msg.bot { margin-right: auto; background: rgba(235, 245, 255, 0.95); }
+
+.highlight {
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.65);
+}
+
+/* About grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.pill {
+  padding: 12px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.link { color: #0a4aa6; }
