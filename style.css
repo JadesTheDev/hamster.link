@@ -180,6 +180,15 @@ body{
 .routerCard.icarus{ background-image: url("./icarus/icarus.png"); }
 .routerCard.thaddius{ background-image: url("./thaddius/thaddius.png"); }
 
+/* Fixed grid? */
+.grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  margin-top: 18px;
+}
+
+
 /* Footer */
 .footer{
   text-align: center;
