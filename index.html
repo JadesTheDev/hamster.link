@@ -8,62 +8,76 @@
 </head>
 
 <body>
-  <header class="site-header">
-    <h1 class="site-title">Hamster Link</h1>
-    <p class="site-subtitle">ECPI University • Project Hamster Link</p>
+  <header class="top">
+    <h1>Hamster Link</h1>
+    <p class="sub">ECPI University • Project Hamster Link</p>
 
-    <nav class="site-nav" aria-label="Primary">
-      <a class="nav-pill active" href="./">Home</a>
-      <a class="nav-pill" href="kenzie/">Kenzie</a>
-      <a class="nav-pill" href="eric/">Eric</a>
-      <a class="nav-pill" href="icarus/">Icarus</a>
-      <a class="nav-pill" href="thaddius/">Thaddius</a>
+    <nav class="nav">
+      <a class="pill active" href="./index.html">Home</a>
+      <a class="pill" href="./kenzie/index.html">Kenzie</a>
+      <a class="pill" href="./eric/index.html">Eric</a>
+      <a class="pill" href="./icarus/index.html">Icarus</a>
+      <a class="pill" href="./thaddius/index.html">Thaddius</a>
     </nav>
   </header>
 
-  <main class="container">
+  <main class="wrap">
     <section class="card">
       <h2>Welcome to our server.</h2>
-      <p>This is the starting homepage. We’ll keep it simple and stable while we build the router UI.</p>
+      <p class="desc">
+        This is the starting homepage. We’ll keep it simple and stable while we build the router UI.
+      </p>
 
-      <div class="search-row">
-        <label class="search-label" for="searchBox">Search</label>
-        <input id="searchBox" class="search-input" type="text" placeholder="Search..." />
-        <button class="btn" type="button">Search</button>
+      <div class="searchRow">
+        <label for="search" class="searchLabel">Search</label>
+        <input id="search" class="searchInput" type="text" placeholder="Search..." />
+        <button class="searchBtn" type="button">Search</button>
       </div>
 
-      <p class="muted">Reference guide link can live here later (or be moved to Resources in Discord).</p>
+      <p class="muted">
+        Reference guide link can live here later (or be moved to Resources in Discord).
+      </p>
 
       <hr class="divider" />
 
-      <div class="router-grid">
-        <a class="router-tile kenzie" href="kenzie/">
-          <div class="router-name">Kenzie</div>
-          <div class="router-role">Princess • pink gradients</div>
+      <div class="grid">
+        <a class="router" href="./kenzie/index.html">
+          <div class="tile kenzie" aria-label="Kenzie tile"></div>
+          <div class="rText">
+            <h3>Kenzie</h3>
+            <p>Princess • pink gradients</p>
+          </div>
         </a>
 
-        <a class="router-tile eric" href="eric/">
-          <div class="router-name">Eric</div>
-          <div class="router-role">Warrior • steel → red</div>
+        <a class="router" href="./eric/index.html">
+          <div class="tile eric" aria-label="Eric tile"></div>
+          <div class="rText">
+            <h3>Eric</h3>
+            <p>Warrior • steel → red</p>
+          </div>
         </a>
 
-        <a class="router-tile icarus" href="icarus/">
-          <div class="router-name">Icarus</div>
-          <div class="router-role">Nerd • cool blue → purple</div>
+        <a class="router" href="./icarus/index.html">
+          <div class="tile icarus" aria-label="Icarus tile"></div>
+          <div class="rText">
+            <h3>Icarus</h3>
+            <p>Nerd • cool blue → purple</p>
+          </div>
         </a>
 
-        <a class="router-tile thaddius" href="thaddius/">
-          <div class="router-name">Thaddius</div>
-          <div class="router-role">Brick • charcoal → brick</div>
+        <a class="router" href="./thaddius/index.html">
+          <div class="tile thaddius" aria-label="Thaddius tile"></div>
+          <div class="rText">
+            <h3>Thaddius</h3>
+            <p>Brick • charcoal → brick</p>
+          </div>
         </a>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <span>hamster.link</span>
-    <span class="dot">•</span>
-    <span>School project</span>
+  <footer class="foot">
+    hamster.link • School project
   </footer>
 </body>
 </html>
