@@ -10,66 +10,44 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
 
-  <!-- Your existing CSS (gradient + canvas layering lives here) -->
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body style="
-  margin:0;
-  min-height:100vh;
-  font-family:'Orbitron', sans-serif;
-  display:flex;
-  justify-content:center;
-  padding-top:40px;
-">
+<body class="page">
   <!-- Bubble canvas layer (behind everything) -->
   <canvas id="bubbleCanvas"></canvas>
 
-  <div style="width:800px;">
+  <div class="shell">
 
     <!-- Top buttons -->
-    <div style="text-align:center; margin-bottom:10px;">
-      <a href="../index.html"><button>Home</button></a>
-      <a href="../about/index.html"><button>About Us</button></a>
+    <div class="topBtns">
+      <a href="../index.html" class="btn">Home</a>
+      <a href="../about/index.html" class="btn">About Us</a>
     </div>
 
     <!-- Title -->
-    <div style="text-align:center;">
+    <div class="titleBlock">
       <h2>Hello! My name is Kenzie</h2>
-      <div>Project Hamster Link</div>
+      <div class="subtitle">Project Hamster Link</div>
     </div>
 
     <!-- Panel -->
-    <div style="
-      background:rgba(255,255,255,.75);
-      border:1px solid #999;
-      border-radius:12px;
-      padding:12px;
-      margin-top:10px;
-    ">
+    <div class="panel">
 
       <!-- Name row -->
-      <div style="display:flex; gap:10px; margin-bottom:10px; align-items:center;">
-        <div style="white-space:nowrap;">Enter your name:</div>
-        <input id="nameInput" placeholder="e.g. Stormi" style="flex:1;">
-        <button id="nameBtn">Send</button>
+      <div class="row">
+        <div class="label">Enter your name:</div>
+        <input id="nameInput" class="input" placeholder="e.g. Stormi">
+        <button id="nameBtn" class="btnSolid">Send</button>
       </div>
 
       <!-- Chat window -->
-      <div id="chatWindow" style="
-        height:300px;
-        border:1px solid #aaa;
-        border-radius:10px;
-        background:#eee;
-        margin-bottom:10px;
-        padding:10px;
-        overflow:auto;
-      "></div>
+      <div id="chatWindow" class="chatBox"></div>
 
       <!-- Message row -->
-      <div style="display:flex; gap:10px;">
-        <input id="msgInput" style="flex:1;" placeholder="Ask me any question...">
-        <button id="msgBtn">Send</button>
+      <div class="row">
+        <input id="msgInput" class="input" placeholder="Ask me any question...">
+        <button id="msgBtn" class="btnSolid">Send</button>
       </div>
 
     </div>
@@ -78,7 +56,7 @@
   <!-- Bubble animation (same folder as this index.html) -->
   <script src="bubbles.js"></script>
 
-  <!-- Tiny local chat echo (optional; remove if you already have chat logic elsewhere) -->
+  <!-- Tiny local chat echo (optional) -->
   <script>
     const chat = document.getElementById('chatWindow');
     const nameInput = document.getElementById('nameInput');
@@ -90,12 +68,7 @@
 
     function addLine(text, isUser=false) {
       const line = document.createElement('div');
-      line.style.margin = "6px 0";
-      line.style.padding = "8px 10px";
-      line.style.borderRadius = "10px";
-      line.style.maxWidth = "85%";
-      line.style.background = isUser ? "white" : "rgba(0,0,0,.06)";
-      line.style.marginLeft = isUser ? "auto" : "0";
+      line.className = isUser ? "msg user" : "msg bot";
       line.textContent = text;
       chat.appendChild(line);
       chat.scrollTop = chat.scrollHeight;
