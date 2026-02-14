@@ -158,15 +158,15 @@ body{
   box-shadow: 0 10px 22px rgba(0,0,0,0.10);
   transition: transform 120ms ease, box-shadow 120ms ease;
 
-  /* ✅ square cards */
+  /* square cards */
   aspect-ratio: 1 / 1;
-  height: auto;          /* don't force a rectangle height */
-  min-height: 220px;     /* prevents teeny cards on big screens */
+  height: auto;
+  min-height: 220px;
 
-  /* ✅ show image properly */
+  /* show image properly */
   background-repeat: no-repeat;
   background-position: center;
-  background-size: contain; /* show the whole square image */
+  background-size: contain; /* keep contain since your images are square and centered */
 }
 
 .routerCard:hover{
@@ -174,11 +174,11 @@ body{
   box-shadow: 0 16px 34px rgba(0,0,0,0.14);
 }
 
-/* ✅ Background images (FIXED selector) */
-.routerCard.kenzie{ background-image: url("./kenzie/kenzie.png"); }
-.routerCard.eric{ background-image: url("./eric/eric.png"); }
-.routerCard.icarus{ background-image: url("./icarus/icarus.png"); }
-.routerCard.thaddius{ background-image: url("./thaddius/thaddius.png"); }
+/* ✅ Background images updated to new file types */
+.routerCard.kenzie{ background-image: url("./kenzie/kenzie.webp.webp"); }
+.routerCard.eric{ background-image: url("./eric/eric.webp.webp"); }
+.routerCard.icarus{ background-image: url("./icarus/icarus.webp.webp"); }
+.routerCard.thaddius{ background-image: url("./thaddius/thaddius.wepb.webp"); }
 
 /* Router grid (LOCKED 2x2) */
 .grid{
@@ -194,16 +194,6 @@ body{
     grid-template-columns: 1fr;
   }
 }
-
-
-/* Mobile: stack to 1 column */
-@media (max-width: 720px){
-  .grid{
-    grid-template-columns: 1fr;
-  }
-}
-
-
 
 /* Footer */
 .footer{
