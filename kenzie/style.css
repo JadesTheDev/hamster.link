@@ -17,8 +17,37 @@ body{
   color: var(--ink);
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 
-  /* soft page background so the tile pops */
-  background: linear-gradient(to bottom, #f6f1ff, #f9ecff);
+  /* Exact extracted gradient */
+  background: linear-gradient(
+    180deg,
+    #CFA4C8 0%,
+    #DDA8C2 25%,
+    #E3B0BA 50%,
+    #E7C1B5 75%,
+    #E3D5C7 100%
+  );
+
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* ===== Bubble Canvas Layer ===== */
+#bubbleCanvas{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Keep content above bubble canvas */
+.top,
+.wrap,
+.foot{
+  position: relative;
+  z-index: 1;
 }
 
 /* ===== Header ===== */
